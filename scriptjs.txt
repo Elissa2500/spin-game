@@ -1,0 +1,38 @@
+document.getElementById('spin-button').addEventListener('click', spinWheel);
+
+function spinWheel() {
+  const wheel = document.getElementById('wheel');
+  const result = document.getElementById('result');
+  const betAmount = document.getElementById('bet-amount').value;
+  
+  // Clear previous result
+  result.textContent = '';
+
+  // Check minimum bet amount
+  if (betAmount < 100) {
+    result.textContent = 'Minimum bet amount is 100 Rwf';
+    return;
+  }
+
+  // Calculate a random degree to rotate
+  const randomDegree = Math.floor(Math.random() * 360) + 720; // +720 to ensure at least 2 spins
+  const segments = 10; // 1 win, 9 lose
+  const segmentDegree = 360 / segments;
+
+  // Set the transition and transform
+  wheel.style.transition = 'transform 4s ease-out';
+  wheel.style.transform = `rotate(${randomDegree}deg)`;
+
+  // Determine the winning segment
+  setTimeout(() => {
+    const actualDegree = randomDegree % 360;
+    const winningSegmentIndex = Math.floor((360 - actualDegree) / segmentDegree);
+    const prizes = ['Win', 'Lose', 'Lose', 'Lose', 'Lose', 'Lose', 'Lose', 'Lose', 'Lose', 'Lose'];
+    
+    if (prizes[winningSegmentIndex] === 'Win') {
+      result.textContent = `You won: ${betAmount * 10} Rwf!`; // Example: winning 10 times the bet amount
+    } else {
+      result.textContent = 'You lost!';
+    }
+  }, 4000); // 4 seconds to match the transition duration
+}

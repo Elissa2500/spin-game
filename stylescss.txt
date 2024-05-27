@@ -1,0 +1,65 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.wheel {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 10px solid #333;
+  position: relative;
+  overflow: hidden;
+}
+
+.segment {
+  width: 50%;
+  height: 50%;
+  background-color: #f1c40f;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0% 0%;
+  text-align: center;
+  line-height: 150px;
+}
+
+.segment:nth-child(odd) {
+  background-color: #e74c3c;
+}
+
+.segment:nth-child(2) { transform: rotate(36deg); }
+.segment:nth-child(3) { transform: rotate(72deg); }
+.segment:nth-child(4) { transform: rotate(108deg); }
+.segment:nth-child(5) { transform: rotate(144deg); }
+.segment:nth-child(6) { transform: rotate(180deg); }
+.segment:nth-child(7) { transform: rotate(216deg); }
+.segment:nth-child(8) { transform: rotate(252deg); }
+.segment:nth-child(9) { transform: rotate(288deg); }
+.segment:nth-child(10) { transform: rotate(324deg); }
+
+#bet-amount {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#spin-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 20px;
+}

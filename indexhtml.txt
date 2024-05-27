@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spin Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="wheel" id="wheel">
+      <div class="segment">Win</div>
+      <div class="segment">Lose</div>
+      <div class="segment">Lose</div>
+      <div class="segment">Lose</div>
+      <div class="segment">Lose</div>
+      <div class="segment">Lose</div>
+      <div class="segment">Lose</div>
+      <div class="segment">Lose</div>
+      <div class="segment">Lose</div>
+      <div class="segment">Lose</div>
+    </div>
+    <input type="number" id="bet-amount" placeholder="Enter bet amount (min 100 Rwf)" min="100">
+    <button id="spin-button">Spin</button>
+    <div id="result"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
